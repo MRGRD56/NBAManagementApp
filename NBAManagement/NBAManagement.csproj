@@ -72,7 +72,16 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Migrations\201905171501190_Create.cs" />
+    <Compile Include="Migrations\201905171501190_Create.Designer.cs">
+      <DependentUpon>201905171501190_Create.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\BasketballSystemModel.cs" />
+    <Compile Include="Model\Country.cs" />
+    <Compile Include="Model\Player.cs" />
+    <Compile Include="Model\PlayerPosition.cs" />
+    <Compile Include="Model\Team.cs" />
     <Compile Include="View\Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -92,6 +101,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Migrations\201905171501190_Create.resx">
+      <DependentUpon>201905171501190_Create.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

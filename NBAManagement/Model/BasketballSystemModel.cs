@@ -21,6 +21,12 @@
         // о настройке и использовании модели Code First см. в статье http://go.microsoft.com/fwlink/?LinkId=390109.
 
         // public virtual DbSet<MyEntity> MyEntities { get; set; }
+
+        public virtual DbSet<Country> Countries { get; set; }
+        public virtual DbSet<Player> Players { get; set; }
+        public virtual DbSet<Team> Teams { get; set; }
+        public virtual DbSet<PlayerPosition> PlayerPositions { get; set; }
+
     }
 
     //public class MyEntity
