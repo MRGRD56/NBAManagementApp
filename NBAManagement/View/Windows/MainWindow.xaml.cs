@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NBAManagement.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,18 @@ namespace NBAManagement
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void BackNavigateButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (MainFrame.NavigationService.CanGoBack) MainFrame.GoBack();
+        }
+
+        private void MainFrame_LoadCompleted(object sender, NavigationEventArgs e)
+        {
+            var title = (MainFrame.Content as Page).Title;
+            Header.Visibility = title == "Main Screen" ? Visibility.Collapsed : Visibility.Visible;
+            PageNameLabel.Content = title;
         }
     }
 }

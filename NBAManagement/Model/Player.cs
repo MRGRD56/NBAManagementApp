@@ -14,16 +14,28 @@ namespace NBAManagement.Model
     {
         public int Id { get; set; }
 
+        /// <summary>
+        /// Фамилия
+        /// </summary>
         [Required, MaxLength(30)]
         public string LastName { get; set; }
 
+        /// <summary>
+        /// Имя
+        /// </summary>
         [Required, MaxLength(30)]
         public string FirstName { get; set; }
 
+        /// <summary>
+        /// Пол
+        /// </summary>
         [Required]
         public Gender Gender { get; set; }
 
         private decimal height;
+        /// <summary>
+        /// Рост
+        /// </summary>
         [Required]
         public decimal Height
         {
@@ -32,6 +44,9 @@ namespace NBAManagement.Model
         }
 
         private decimal weight;
+        /// <summary>
+        /// Вес
+        /// </summary>
         [Required]
         public decimal Weight
         {
@@ -39,15 +54,27 @@ namespace NBAManagement.Model
             set => weight = Math.Round(value, 2);
         }
 
+        /// <summary>
+        /// ShirtNumber
+        /// </summary>
         [Required, MaxLength(10)]
         public string ShirtNumber { get; set; }
 
+        /// <summary>
+        /// Электронная почта
+        /// </summary>
         [MaxLength(50)]
         public string Email { get; set; }
 
+        /// <summary>
+        /// Страна
+        /// </summary>
         [Required]
         public virtual Country Country { get; set; }
 
+        /// <summary>
+        /// Команда
+        /// </summary>
         [Required]
         public virtual Team Team { get; set; }
     }

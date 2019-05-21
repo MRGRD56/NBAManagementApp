@@ -5,14 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NBAManagement"
         mc:Ignorable="d"
-        Title="NBA Management" Height="600" Width="900">
+        Title="NBA Management" Height="600" Width="900" MinWidth="700">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="45"/>
             <RowDefinition/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
-        <Frame Source="/View/Pages/MainScreenPage.xaml" NavigationUIVisibility="Hidden" Grid.RowSpan="2"/>
-        <Label Grid.Row="1" Background="#6995C2" Foreground="White" Padding="1" HorizontalContentAlignment="Center" Content="The current season is 2016-2017, and the NBA already has a history of 71 years."/>
+        <Grid x:Name="Header" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="100"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/View/Resources/Images/logo.jpg" Margin="2 5"/>
+                <Label Content="NBA Management System" VerticalContentAlignment="Center" Margin="0 10 0 0" Foreground="#656565" FontSize="11" FontWeight="DemiBold"/>
+            </StackPanel>
+            <Label x:Name="PageNameLabel" Grid.ColumnSpan="3" FontSize="16" FontFamily="Vendana" Foreground="#474747" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0 10 0 0"/>
+            <Button Grid.Column="2" Content="Back" Height="20" Width="50" Click="BackNavigateButton_Click"/>
+        </Grid>
+        <Frame x:Name="MainFrame" Grid.Row="1" Source="/View/Pages/MainScreenPage.xaml" NavigationUIVisibility="Hidden" LoadCompleted="MainFrame_LoadCompleted"/>
+        <Label Grid.Row="2" Background="#6995C2" Foreground="White" Padding="1" HorizontalContentAlignment="Center" Content="The current season is 2016-2017, and the NBA already has a history of 71 years."/>
     </Grid>
 
 </Window>

@@ -6,9 +6,9 @@
     <Application.Resources>
         <Style x:Key="BlueButton" TargetType="Button">
             <Setter Property="Background" Value="#6995C2"/>
-            <Setter Property="Height" Value="40"/>
+            <Setter Property="Height" Value="50"/>
             <Setter Property="Foreground" Value="White"/>
-            <Setter Property="Padding" Value="15 0"/>
+            <Setter Property="Padding" Value="20 0"/>
             <Setter Property="FontFamily" Value="Segoe UI Semibold"/>
             <Setter Property="FontSize" Value="20"/>
         </Style>

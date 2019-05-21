@@ -11,7 +11,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="120"/>
-            <RowDefinition Height="100*"/>
+            <RowDefinition Height="95*"/>
             <RowDefinition Height="50*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
@@ -25,17 +25,52 @@
                 <TextBlock FontFamily="Verdana" FontSize="14" Foreground="#656565" TextAlignment="Center" Margin="0 10 0 0" Text="Welcome to use this NBA Management system, you can &#xD;&#xA;redirect to different pages according to your role by clicking the buttons bellow.&#xD;&#xA;"/>
             </StackPanel>
         </Grid>
-        <!--TODO:Сделать обводку black 1px solid-->
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="3*"/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button Style="{StaticResource BlueButton}" Content="Visitor" Margin="10 0"/>
-                <Button Style="{StaticResource BlueButton}" Content="Admin" Margin="10 0"/>
-            </StackPanel>
+            <Border BorderBrush="LightGray" BorderThickness="1" Grid.Column="1">
+                <Grid HorizontalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Style="{StaticResource BlueButton}" Margin="20 0" Content="Visitor" Click="VisitorMenuPageNavigationButton_Click"/>
+                    <Button Grid.Column="1" Style="{StaticResource BlueButton}" Margin="20 0" Content="Admin"/>
+                </Grid>
+            </Border>
         </Grid>
+        <Border Grid.Row="2" Margin="5 15 5 10" BorderBrush="LightGray" BorderThickness="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="50"/>
+                </Grid.ColumnDefinitions>
+                <Grid.Resources>
+                    <Style TargetType="Button">
+                        <Setter Property="Height" Value="40"/>
+                        <Setter Property="Margin" Value="5"/>
+                        <Setter Property="FontSize" Value="40"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Setter Property="Foreground" Value="#656565"/>
+                        <Setter Property="FontFamily" Value="Segoe UI"/>
+                        <Setter Property="Padding" Value="0 -12 0 0"/>
+                    </Style>
+                    <Style TargetType="Image">
+                        <Setter Property="Margin" Value="10 5"/>
+                    </Style>
+                </Grid.Resources>
+                <Button Grid.Column="0" Content="&lt;"/>
+                <Image Grid.Column="1" Source="/View/Resources/Images/lineup.jpg"/>
+                <Image Grid.Column="2" Source="/View/Resources/Images/lineup.jpg"/>
+                <Image Grid.Column="3" Source="/View/Resources/Images/lineup.jpg"/>
+                <Button Grid.Column="4" Content="&gt;"/>
+            </Grid>
+        </Border>
     </Grid>
 </Page>

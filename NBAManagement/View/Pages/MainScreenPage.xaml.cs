@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NBAManagement.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,14 @@ namespace NBAManagement.View.Pages
         public MainScreenPage()
         {
             InitializeComponent();
+            //this.NavigationService.Navigated += (object sender, NavigationEventArgs e) =>
+            //    MessageBox.Show("Navigated");
+            //MainWindowViewModel.AppNavigationService = NavigationService;
+        }
+
+        private void VisitorMenuPageNavigationButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new VisitorMenuPage());
         }
     }
 }
